@@ -1,0 +1,125 @@
+<!--index.html-->
+<!--
+• 네비게이션 부분에 페이지 간의 Linking이 있어야 함
+    • 메인 페이지 -> 로그인 페이지 (5pt)
+    • 메인 페이지-> 회원가입 페이지 (5pt)
+• Animation을 통해 오른쪽(시작점)에서 왼쪽(끝점)으로 헤더 텍스트가 2초 동안 슬라이딩해야 함
+    • Animation-duration 사용 (10pt)
+    • Animation-name, @keyframes 사용 (15pt)
+    (• Js사용하면 안 되고 html, css로만 해결해야 함)
+    (hint: 헤더 텍스트를 감싸고 있는 컴포넌트들의 width 조절)
+• Index.html에 보이는 컴포넌트들은 width가 1020px 내에 항상 존재해야 함
+    (25pt, 1개라도 1020px을 넘어가면 -25pt)
+    • 이때, 헤더 텍스트가 멈출 때 1020px을 넘어가면 안 됨(시작점에서는 넘어도 됨)
+
+• 소개하는 영화의 이미지 최소 1개가 hover 시 2초 동안 확대
+    • transition, hover 사용(15pt, 1개라도 안 쓰면 -15pt)
+    • 이미지 로딩 여부 (5pt)
+• 소개하는 영화의 이미지 최소 1개가 hover 시 이미지 위에 영화 이름 띄우기
+    • hover 사용 (10pt)
+    • 이미지 및 텍스트 로딩 여부 (10pt)
+
+• Flexible box layout 적용 (70점)
+    1. ‘네비게이션’을 flex-container로 구성하기 (20점)
+        • flex-direction, flex-wrap, justify-content 사용
+    2. ‘메인 컨텐츠’에 flex-container 4개 이상 중첩하기 (20점)
+        • 예) horizontal inside vertical
+    3. 미디어 쿼리를 사용하여 스크린 너비에 따라 ‘네비게이션’ 및 ‘메인 컨텐츠’ layout 변경하기
+        • Max-width는 3가지 case를 고려 (~ 480px, 481~ 800, 801 ~)
+        • 각 case별 10점
+-->
+<!DOCTYPE html>
+
+<head>
+  <title>Main Movie Site</title>
+  <link rel = "stylesheet" type = "text/css" href = "main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+    
+      <!-- 헤더 -->
+      <header class="header">
+        <div class="header-top">
+          <div class="movingtext">
+            <h2>인터넷프로그래밍 영화 정보 사이트</h2>
+          </div>
+        </div>
+        <div class="header-nav">
+          <nav class="navigation">
+            <a href="index.html">메인페이지</a>
+            <a href="login.html">로그인</a>
+            <a href="signup.html">회원가입</a>
+          </nav>
+        </div>
+      </header>
+    
+      <!-- 메인 컨텐츠 -->
+      <main class="main-container">
+    
+        <!-- Movies Section -->
+        <section class="movies-section">
+          <h2>Movies</h2>
+          <div class="movies-information">
+            
+            <div class="movie-card">
+                <div class="movie-item">
+                    <img src="Eternal_Sunshine_of_the_Spotless_Mind.jpg" alt="Eternal Sunshine of the Spotless Mind">
+                    <div class="movie-title">Eternal Sunshine of the Spotless Mind</div>
+                </div>
+                <div class="movie-item">
+                    <img src="Eternal_Sunshine_of_the_Spotless_Mind.jpg" alt="Eternal Sunshine of the Spotless Mind">
+                    <div class="movie-title">Eternal Sunshine of the Spotless Mind</div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="movie-item">
+                    <img src="Harry_Potter_and_the_Philosophers_Stone.jpg" alt="Harry Potter and the Philosopher's Stone">
+                    <div class="movie-title">Harry Potter and the Philosopher's Stone</div>
+                </div>
+                <div class="movie-item">
+                    <img src="Harry_Potter_and_the_Philosophers_Stone.jpg" alt="Harry Potter and the Philosopher's Stone">
+                    <div class="movie-title">Harry Potter and the Philosopher's Stone</div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="movie-item">
+                    <img src="Now_You_See_Me_2.jpg" alt="Now You See Me 2">
+                    <div class="movie-title">Now You See Me 2</div>
+                </div>
+                <div class="movie-item">
+                    <img src="Now_You_See_Me_2.jpg" alt="Now You See Me 2">
+                    <div class="movie-title">Now You See Me 2</div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="movie-item">
+                    <img src="The_Truman_Show.jpg" alt="The Truman Show">
+                    <div class="movie-title">The Truman Show</div>
+                </div>
+                <div class="movie-item">
+                    <img src="The_Truman_Show.jpg" alt="The Truman Show">
+                    <div class="movie-title">The Truman Show</div>
+                </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- About Section -->
+        <section class="about-section">
+          <h2>About</h2>
+          <p>
+            여기는 인프밍 영화 정보 사이트입니다!
+          </p>
+        </section>
+    
+      </main>
+    
+    </div> <!-- /.wrapper -->
+    </body>
+    </html>
+
+
+  <!-- 사진은 <img scr = "이미지 경로" alt = "대체 텍스트" width = "%" height = "%"> -->
+
+  
