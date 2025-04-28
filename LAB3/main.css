@@ -1,0 +1,256 @@
+/* main.css */
+/* Requirements (50점 만점)
+• 아래 10개의 properties 모두 사용 (한 개 당 5점)
+• background-color 배경색                       (O)                    
+• text-align 텍스트 정렬                        (O)       
+• padding 안쪽 여백                             (O)      
+• margin 바깥쪽 여백                            (O)    
+• border 윤곽선                                 (O)
+• font-size 폰트 크기                           (O)     
+• font-family 폰트 모음                         (O)     
+• color 글자 색상                               (O)     
+• width 너비                                    (O)
+• height 높이                                   (O)
+• 컴포넌트들의 class명은 자유롭게 작성      
+－－－－－－－－－－－－－－－－－－－－－－－－－
+이름 등 묶을 박스
+*/ 
+
+/* login.html, signup.html */
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #333333;
+    text-align: center;             /* 제목, 내용들은 가운데에! */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 400px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid gray;
+    background-color: #ffffff;
+    text-align: left;
+  }
+  
+  .login, .signup {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .input, .select {
+    width: 100%;                       
+    height: 30px;                      
+    margin-bottom: 10px;              
+    padding: 5px;                      
+    font-size: 14px;
+  }
+  .green_button {
+    width: 48%;                        
+    height: 35px;                      
+    font-size: 14px;                   
+    color: white;                      
+    border: none;                      
+    margin: 5px 1%; 
+    background-color: green;           
+  }
+  
+  .red_button {
+    width: 48%;                        
+    height: 35px;                      
+    font-size: 14px;                   
+    color: white;                      
+    border: none;                      
+    margin: 5px 1%; 
+    background-color: red;             
+  }
+
+
+/* index.html */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+/* wrapper */
+.wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+.header {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.header-top {
+  width: 100%;
+  text-align: left;
+}
+
+.movingtext {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: sliding;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  width: 1020px;
+}
+
+@keyframes sliding {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.header-nav {
+  width: 100%;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin: 5px 10px 0 0;
+}
+
+/* 메인 컨텐츠 */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* Movies Section */
+.movies-section {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.movies-information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 320px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  background-color: #ffffff;
+  gap: 10px;
+}
+
+/* 각각의 영화 */
+.movie-item {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.movie-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 2s;
+}
+
+/* Hover 시 이미지 확대 */
+.movie-item:hover img {
+  transform: scale(1.2);
+}
+
+/* Hover 시 영화 제목 등장 */
+.movie-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  font-size: 12px;
+  padding: 5px 0;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.5s;
+}
+
+.movie-item:hover .movie-title {
+  opacity: 1;
+}
+
+/* About Section */
+.about-section {
+  width: 80%;
+  padding: 20px;
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-top: 2px solid #000000;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 480px) {
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+  .movies-information {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 800px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .movies-information {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 801px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .movies-information {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
